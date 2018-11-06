@@ -43,27 +43,103 @@ class stage extends Phaser.Scene
  }
 
  update(delta)
- {
-    if (this.cursors.left.isDown)
-    {
-        this.player.setVelocityX(-160);
-    }
-    else if (this.cursors.right.isDown)
-    {
-        this.player.setVelocityX(160);
-    }
-    else if(this.cursors.down.isDown)
-    {
-        this.player.setVelocityY(160);
-    }
-    else if (this.cursors.up.isDown)
-    {
+ { 
+    // switch(this.cursors.input){
+    //     case this.cursors.left.isDown:
+    //             case this.cursors.left.isDown:
+    //             this.player.setVelocityX(-160);
+    //             break;
+                
+    //             case this.cursors.right.isDown:
+    //             this.player.setVelocityX(0);
+    //             this.player.setVelocityY(0);
+    //             break;
+        
+    //             case this.cursors.up.isDown:
+    //             this.player.setVelocityX(-160);
+    //             this.player.setVelocityY(160);
+    //             break;
+        
+    //             case this.cursors.down.isDown:
+    //             this.player.setVelocityX(-160);
+    //             this.player.setVelocityY(-160);
+    //             break;
+    
+    //     case this.cursors.right.isDown:
+    //             case this.cursors.left.isDown:
+    //             this.player.setVelocityX(0);
+    //             this.player.setVelocityY(0);
+    //             break;
+                
+    //             case this.cursors.right.isDown:
+    //             this.player.setVelocityX(160);
+    //             break;
+        
+    //             case this.cursors.up.isDown:
+    //             this.player.setVelocityX(160);
+    //             this.player.setVelocityY(160);
+    //             break;
+        
+    //             case this.cursors.down.isDown:
+    //             this.player.setVelocityX(160);
+    //             this.player.setVelocityY(-160);
+    //             break;
+
+    //     case this.cursors.up.isDown:
+    //             case this.cursors.left.isDown:
+    //             this.player.setVelocityX(-160);
+    //             this.player.setVelocityY(160);
+    //             break;
+                
+    //             case this.cursors.right.isDown:
+    //             this.player.setVelocityX(160);
+    //             this.player.setVelocityY(160);
+    //             break;
+        
+    //             case this.cursors.up.isDown:
+    //             this.player.setVelocityX(160);
+    //             break;
+        
+    //             case this.cursors.down.isDown:
+    //             this.player.setVelocityX(0);
+    //             this.player.setVelocityY(0);
+    //             break;  
+
+    //     case this.cursors.down.isDown:
+    //             case this.cursors.left.isDown:
+    //             this.player.setVelocityX(-160);
+    //             this.player.setVelocityY(-160);
+    //             break;
+                
+    //             case this.cursors.right.isDown:
+    //             this.player.setVelocityX(160);
+    //             this.player.setVelocityY(-160);
+    //             break;
+        
+    //             case this.cursors.up.isDown:
+    //             this.player.setVelocityX(0);
+    //             this.player.setVelocityY(0);
+    //             break;
+        
+    //             case this.cursors.down.isDown:
+    //             this.player.setVelocityY(-160);
+    //             break;    
+    // }
+    if(this.cursors.up.isDown){ 
         this.player.setVelocityY(-160);
     }
-    else
-    {
+    else if(this.cursors.down.isDown){ 
+        this.player.setVelocityY(160);
+    }
+    if(this.cursors.right.isDown){ 
+        this.player.setVelocityX(160);
+    }
+    else if(this.cursors.left.isDown){ 
+        this.player.setVelocityX(-160);
+    }
+    else{
         this.player.setVelocityX(0);
         this.player.setVelocityY(0);
     }
- }
+}
 }
