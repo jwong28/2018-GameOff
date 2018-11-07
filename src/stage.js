@@ -1,3 +1,5 @@
+import Player from '../sprites/Player';
+
 class stage extends Phaser.Scene
 {
  constructor()

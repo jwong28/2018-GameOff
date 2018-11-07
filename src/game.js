@@ -1,3 +1,5 @@
+import stage from '../stage';
+
 const config = {
     type: Phaser.AUTO,
     width: 800,

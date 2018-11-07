@@ -16,4 +16,5 @@
 - 2D physics added in for player movement (jwong28)
 
 11-6-2018:
--Updated the player movement for diagonal movement to be more smoother (SimonHe1)
+- Updated the player movement for diagonal movement to be more smoother (SimonHe1)
+- Installed ES6 and webpack to assist in splitting classes
