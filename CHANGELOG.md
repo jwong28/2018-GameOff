@@ -8,3 +8,10 @@
 
 11-4-2018:
 - Updated physics so it matches a top down shooter (jwong28)
+
+11-5-2018:
+- Removed basic phaser game. Split html into different scences 
+- 2D physics added in for player movement
+
+11-6-2018:
+-Updated the player movement for diagonal movement to be more smoother
