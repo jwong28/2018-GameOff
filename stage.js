@@ -10,7 +10,7 @@ class stage extends Phaser.Scene
     this.load.image('sky', 'assets/sky.png');
     this.load.image('ground', 'assets/platform.png');
     this.load.spritesheet('player', 
-        'assets/Sprite.png',
+        'assets/PlayerSprite.png',
         { frameWidth: 32, frameHeight: 48 }
     );
     this.load.image('bullet', 'assets/bullet.png');
@@ -21,9 +21,9 @@ class stage extends Phaser.Scene
     this.add.image(400, 300, 'sky');
     var platforms = this.physics.add.staticGroup();
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
-
+    
     //Player creation
-    this.player = this.physics.add.sprite(100, 450, 'dude');
+    this.player = this.physics.add.sprite(200, 512, 'player');
     this.player.setCollideWorldBounds(true);
 
     //Player animations
@@ -90,22 +90,94 @@ class stage extends Phaser.Scene
 
  update(delta)
  { 
-    if(this.cursors.up.isDown){ 
-        this.player.setVelocityY(-160);
-        // this.player.anims.play('up');
-    }
-    else if(this.cursors.down.isDown){ 
-        this.player.setVelocityY(160);
-        // this.player.anims.play('down');
-    }
     if(this.cursors.right.isDown){ 
-        this.player.setVelocityX(160);
-        // this.player.anims.play('right');
+        if(this.cursors.left.isDown){
+            this.player.setVelocityX(0);
+            this.player.setVelocityY(0);
+        }
+        if(this.cursors.up.isDown){
+            this.player.setVelocityX(160);
+            this.player.setVelocityY(-160);
+            this.player.anims.play('upRight',true);
+        }
+        if(this.cursors.down.isDown){
+            this.player.setVelocityX(160);
+            this.player.setVelocityY(160);
+            this.player.anims.play('downRight',true);
+        }
+        if(this.cursors.right.isDown){
+            this.player.setVelocityX(160);
+            this.player.setVelocityY(0);
+            this.player.anims.play('right',true);
+        }
     }
+
     else if(this.cursors.left.isDown){ 
-        this.player.setVelocityX(-160);
-        // this.player.anims.play('left');
+        if(this.cursors.left.isDown){
+            this.player.setVelocityX(-160);
+            this.player.setVelocityY(0);
+            this.player.anims.play('left',true);
+        }
+        if(this.cursors.up.isDown){
+            this.player.setVelocityX(-160);
+            this.player.setVelocityY(-160);
+            this.player.anims.play('upLeft',true);
+        }
+        if(this.cursors.down.isDown){
+            this.player.setVelocityX(-160);
+            this.player.setVelocityY(160);
+            this.player.anims.play('downLeft',true);
+        }
+        if(this.cursors.right.isDown){
+            this.player.setVelocityX(0);
+            this.player.setVelocityY(0);
+        }
     }
+    
+    else if(this.cursors.up.isDown){ 
+        if(this.cursors.left.isDown){
+            this.player.setVelocityX(-160);
+            this.player.setVelocityY(-160);
+            this.player.anims.play('upLeft',true);
+        }
+        if(this.cursors.up.isDown){
+            this.player.setVelocityX(0);
+            this.player.setVelocityY(-160);
+            this.player.anims.play('up',true);
+        }
+        if(this.cursors.down.isDown){
+            this.player.setVelocityX(0);
+            this.player.setVelocityY(0);
+        }
+        if(this.cursors.right.isDown){
+            this.player.setVelocityX(160);
+            this.player.setVelocityY(-160);
+            this.player.anims.play('upRight',true);
+        }
+    }
+
+    else if(this.cursors.down.isDown){ 
+        if(this.cursors.left.isDown){
+            this.player.setVelocityX(-160);
+            this.player.setVelocityY(160);
+            this.player.anims.play('downLeft',true);
+        }
+        if(this.cursors.up.isDown){
+            this.player.setVelocityX(0);
+            this.player.setVelocityY(0);
+        }
+        if(this.cursors.down.isDown){
+            this.player.setVelocityX(0);
+            this.player.setVelocityY(160);
+            this.player.anims.play('down',true);
+        }
+        if(this.cursors.right.isDown){
+            this.player.setVelocityX(160);
+            this.player.setVelocityY(160);
+            this.player.anims.play('downRight',true);
+        }
+    }
+
     else{
         this.player.setVelocityX(0);
         this.player.setVelocityY(0);
