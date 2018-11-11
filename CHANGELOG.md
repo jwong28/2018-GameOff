@@ -10,8 +10,18 @@
 - Updated physics so it matches a top down shooter (jwong28)
 
 11-5-2018:
-- Removed basic phaser game. Split html into different scences 
-- 2D physics added in for player movement
+- Removed basic phaser game. Split html into different scences (jwong28)
+- 2D physics added in for player movement (jwong28)
+- Removed basic phaser game. Split html into different scences (jwong28)
+- 2D physics added in for player movement (jwong28)
 
 11-6-2018:
 -Updated the player movement for diagonal movement to be more smoother
+
+11-10-2018:
+-Fixed the directional movements to run smoother. Also added sprite changes for the player for each of the directions but need to fix that part. (SimonHe1)
+- Updated the player movement for diagonal movement to be more smoother (SimonHe1)
+- Installed ES6 and webpack to assist in splitting classes (jwong28)
+
+11-11-2018:
+- Updated frames to change based on direction (jwong28)
