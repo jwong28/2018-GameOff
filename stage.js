@@ -95,17 +95,17 @@ class stage extends Phaser.Scene
             this.player.setVelocityX(0);
             this.player.setVelocityY(0);
         }
-        if(this.cursors.up.isDown){
+        else if(this.cursors.up.isDown){
             this.player.setVelocityX(160);
             this.player.setVelocityY(-160);
             this.player.anims.play('upRight',true);
         }
-        if(this.cursors.down.isDown){
+        else if(this.cursors.down.isDown){
             this.player.setVelocityX(160);
             this.player.setVelocityY(160);
             this.player.anims.play('downRight',true);
         }
-        if(this.cursors.right.isDown){
+        else if(this.cursors.right.isDown){
             this.player.setVelocityX(160);
             this.player.setVelocityY(0);
             this.player.anims.play('right',true);
@@ -140,16 +140,16 @@ class stage extends Phaser.Scene
             this.player.setVelocityY(-160);
             this.player.anims.play('upLeft',true);
         }
-        if(this.cursors.up.isDown){
+        else if(this.cursors.up.isDown){
             this.player.setVelocityX(0);
             this.player.setVelocityY(-160);
             this.player.anims.play('up',true);
         }
-        if(this.cursors.down.isDown){
+        else if(this.cursors.down.isDown){
             this.player.setVelocityX(0);
             this.player.setVelocityY(0);
         }
-        if(this.cursors.right.isDown){
+        else if(this.cursors.right.isDown){
             this.player.setVelocityX(160);
             this.player.setVelocityY(-160);
             this.player.anims.play('upRight',true);
@@ -162,16 +162,16 @@ class stage extends Phaser.Scene
             this.player.setVelocityY(160);
             this.player.anims.play('downLeft',true);
         }
-        if(this.cursors.up.isDown){
+        else if(this.cursors.up.isDown){
             this.player.setVelocityX(0);
             this.player.setVelocityY(0);
         }
-        if(this.cursors.down.isDown){
+        else if(this.cursors.down.isDown){
             this.player.setVelocityX(0);
             this.player.setVelocityY(160);
             this.player.anims.play('down',true);
         }
-        if(this.cursors.right.isDown){
+        else if(this.cursors.right.isDown){
             this.player.setVelocityX(160);
             this.player.setVelocityY(160);
             this.player.anims.play('downRight',true);
