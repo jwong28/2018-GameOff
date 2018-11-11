@@ -15,3 +15,6 @@
 
 11-6-2018:
 -Updated the player movement for diagonal movement to be more smoother
+
+11-10-2018:
+-Fixed the directional movements to run smoother. Also added sprite changes for the player for each of the directions but need to fix that part.
