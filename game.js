@@ -1,6 +1,4 @@
-import stage from '../stage';
-
-const config = {
+var config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
@@ -14,5 +12,4 @@ const config = {
 }
 
 
-const game = new Phaser.Game(config);
-
+var game = new Phaser.Game(config);
