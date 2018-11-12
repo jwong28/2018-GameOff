@@ -1,6 +1,5 @@
 import 'phaser';
-import { Preloader } from './scenes/preloader';
-import { Stage } from './scenes/stage';
+import { Game } from './scenes/game';
 
 const config = {
     type: Phaser.AUTO,
@@ -12,7 +11,7 @@ const config = {
             debug: false
         }
     },
-    scene: [ Preloader ]
+    scene: [ Game ]
 }
 
 

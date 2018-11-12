@@ -2,4 +2,8 @@
 Our game for Itch.io's GameOff jam 
 Created by Jefferson Wong, Simon He and Eric Yin.
 
-Speacial thanks to nkholski from https://github.com/nkholski/phaser3-es6-webpack.
+Steps to install:
+- Clone repo.
+- Run npm install.
+- Run npm run dev to run the developmental server. Note: If this doesn't work, try npm install webpack before run dev.
+- Open localhost:3000/

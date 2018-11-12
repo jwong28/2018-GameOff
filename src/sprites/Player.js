@@ -6,7 +6,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
         config.scene.add.existing(this);
     }
 
-    update(keys)
+    update(keys, delta)
     {
         let input = {
             left: keys.left.isDown,
@@ -16,20 +16,20 @@ export default class Player extends Phaser.GameObjects.Sprite {
         }
 
         if(input.up){ 
-            this.player.setVelocityY(-160);
+            this.body.setVelocityY(-160);
         }
         else if(input.down){ 
-            this.player.setVelocityY(160);
+            this.body.setVelocityY(160);
         }
         if(input.right){ 
-            this.player.setVelocityX(160);
+            this.body.setVelocityX(160);
         }
         else if(input.left){ 
-            this.player.setVelocityX(-160);
+            this.body.setVelocityX(-160);
         }
         else{
-            this.player.setVelocityX(0);
-            this.player.setVelocityY(0);
+            this.body.setVelocityX(0);
+            this.body.setVelocityY(0);
         }
     }
 
