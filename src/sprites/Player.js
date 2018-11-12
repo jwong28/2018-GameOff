@@ -15,6 +15,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
             down: keys.down.isDown
         }
 
+        
+
         if(input.up){ 
             this.body.setVelocityY(-160);
         }

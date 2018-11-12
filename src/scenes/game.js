@@ -11,7 +11,7 @@ export class Game extends phaser.Scene {
         this.load.image('sky', 'assets/sky.png');
         this.load.image('ground', 'assets/platform.png');
         console.log('Preloader preload')
-        this.load.spritesheet('dude', 'assets/dude.png',
+        this.load.spritesheet('player', 'assets/PlayerSprite.png',
             { frameWidth: 32, frameHeight: 48 }
         );
     this.load.image('bullet', 'assets/bullet.png');
@@ -24,7 +24,7 @@ export class Game extends phaser.Scene {
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         this.player = new Player({
             scene: this,
-            key: 'dude',
+            key: 'player',
             x: 100,
             y: 450
         });

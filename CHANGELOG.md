@@ -16,5 +16,15 @@
 - 2D physics added in for player movement (jwong28)
 
 11-6-2018:
+-Updated the player movement for diagonal movement to be more smoother
+
+11-10-2018:
+-Fixed the directional movements to run smoother. Also added sprite changes for the player for each of the directions but need to fix that part. (SimonHe1)
 - Updated the player movement for diagonal movement to be more smoother (SimonHe1)
-- Installed ES6 and webpack to assist in splitting classes
+- Installed ES6 and webpack to assist in splitting classes (jwong28)
+
+11-11-2018:
+- Updated frames to change based on direction (jwong28)
+
+11-12-2018:
+- Integrated Webpack, ES6 with Phaser
