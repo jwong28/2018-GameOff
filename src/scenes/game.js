@@ -2,19 +2,19 @@ import phaser from 'phaser'
 import Player from '../sprites/Player';
 
 export class Game extends phaser.Scene {
-    constructor () {
+    constructor (test) {
         super({
-            key: 'preloader'
+            key: 'Game'
         })
     }
     preload () {
-        this.load.image('sky', 'assets/sky.png');
-        this.load.image('ground', 'assets/platform.png');
-        console.log('Preloader preload')
-        this.load.spritesheet('player', 'assets/PlayerSprite.png',
-            { frameWidth: 32, frameHeight: 48 }
-        );
-    this.load.image('bullet', 'assets/bullet.png');
+        // this.load.image('sky', 'assets/sky.png');
+        // this.load.image('ground', 'assets/platform.png');
+        // console.log('Preloader preload')
+        // this.load.spritesheet('player', 'assets/PlayerSprite.png',
+        //     { frameWidth: 32, frameHeight: 48 }
+        // );
+        //  this.load.image('bullet', 'assets/bullet.png');
     }
 
     create()
