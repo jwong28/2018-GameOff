@@ -5,6 +5,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
         config.scene.physics.world.enable(this);
         config.scene.add.existing(this);
         this.type = 'player';
+        this.direction = '';
+        this.speed = 160;
     }
 
     create()
@@ -27,116 +29,77 @@ export default class Player extends Phaser.GameObjects.Sprite {
             down: keys.down.isDown
         }
 
-        
-
-        // if(input.up){ 
-        //     this.body.setVelocityY(-160);
-        //     // console.log(this);
-        // }
-        // else if(input.down){ 
-        //     this.body.setVelocityY(160);
-        // }
-        // if(input.right){ 
-        //     this.body.setVelocityX(160);
-        // }
-        // else if(input.left){ 
-        //     this.body.setVelocityX(-160);
-        // }
-        // else{
-        //     this.body.setVelocityX(0);
-        //     this.body.setVelocityY(0);
-        // }
-        if(input.right){ 
-            if(input.left){
-                this.body.setVelocityX(0);
-                this.body.setVelocityY(0);
-            }
-            else if(input.up){
-                this.body.setVelocityX(160);
-                this.body.setVelocityY(-160);
-                this.anims.play('upRight',true);
-            }
-            else if(input.down){
-                this.body.setVelocityX(160);
-                this.body.setVelocityY(160);
-                this.anims.play('downRight',true);
-            }
-            else if(input.right){
-                this.body.setVelocityX(160);
-                this.body.setVelocityY(0);
-                this.anims.play('right',true);
-            }
+        if((input.right && input.up)){
+            this.direction = 'upRight';
         }
-    
-        else if(input.left){ 
-            if(input.left){
-                this.body.setVelocityX(-160);
-                this.body.setVelocityY(0);
-                this.anims.play('left',true);
-            }
-            if(input.up){
-                this.body.setVelocityX(-160);
-                this.body.setVelocityY(-160);
-                this.anims.play('upLeft',true);
-            }
-            if(input.down){
-                this.body.setVelocityX(-160);
-                this.body.setVelocityY(160);
-                this.anims.play('downLeft',true);
-            }
-            if(input.right){
-                this.body.setVelocityX(0);
-                this.body.setVelocityY(0);
-            }
+        else if((input.right && input.down)){
+            this.direction = 'downRight'
         }
-        
-        else if(input.up){ 
-            if(input.left){
-                this.body.setVelocityX(-160);
-                this.body.setVelocityY(-160);
-                this.anims.play('upLeft',true);
-            }
-            else if(input.up){
-                this.body.setVelocityX(0);
-                this.body.setVelocityY(-160);
-                this.anims.play('up',true);
-            }
-            else if(input.down){
-                this.body.setVelocityX(0);
-                this.body.setVelocityY(0);
-            }
-            else if(input.right){
-                this.body.setVelocityX(160);
-                this.body.setVelocityY(-160);
-                this.anims.play('upRight',true);
-            }
+        else if((input.left && input.up)){
+            this.direction = 'upLeft';
         }
-    
-        else if(input.down){ 
-            if(input.left){
-                this.body.setVelocityX(-160);
-                this.body.setVelocityY(160);
-                this.anims.play('downLeft',true);
-            }
-            else if(input.up){
-                this.body.setVelocityX(0);
-                this.body.setVelocityY(0);
-            }
-            else if(input.down){
-                this.body.setVelocityX(0);
-                this.body.setVelocityY(160);
-                this.anims.play('down',true);
-            }
-            else if(input.right){
-                this.body.setVelocityX(160);
-                this.body.setVelocityY(160);
-                this.anims.play('downRight',true);
-            }
+        else if(input.left && input.down){
+            this.direction = 'downLeft'
         }
-    
+        else if(input.right){
+            this.direction = 'right';
+        }
+        else if(input.left){
+            this.direction = 'left';
+        }
+        else if(input.up){
+            this.direction = 'up';
+        }
+        else if(input.down){
+            this.direction = 'down';
+        }
         else{
+            this.direction = '';
             this.body.setVelocityX(0);
             this.body.setVelocityY(0);
+        }
+        switch(this.direction){
+            case 'upRight':
+                this.body.setVelocityX(this.speed);
+                this.body.setVelocityY(-1*this.speed);
+                this.anims.play(this.direction,true);
+                break;
+            case 'downRight':
+                this.body.setVelocityX(this.speed);
+                this.body.setVelocityY(this.speed);
+                this.anims.play(this.direction,true);
+                break;
+            case 'upLeft':
+                this.body.setVelocityX(-1*this.speed);
+                this.body.setVelocityY(-1*this.speed);
+                this.anims.play(this.direction,true);
+                break;
+            case 'downLeft':
+                this.body.setVelocityX(-1*this.speed);
+                this.body.setVelocityY(this.speed);
+                this.anims.play(this.direction,true);
+                break;
+            case 'right':
+                this.body.setVelocityX(this.speed);
+                this.body.setVelocityY(0);
+                this.anims.play(this.direction,true);
+                break;
+            case 'left':
+                this.body.setVelocityX(-1*this.speed);                
+                this.body.setVelocityY(0);
+                this.anims.play(this.direction,true);
+                break;
+            case 'up':
+                this.body.setVelocityX(0);
+                this.body.setVelocityY(-1*this.speed);
+                this.anims.play(this.direction,true);
+                break;
+            case 'down':
+                this.body.setVelocityX(0);
+                this.body.setVelocityY(this.speed);
+                this.anims.play(this.direction,true);
+                break;
+            
         }
     }
 
