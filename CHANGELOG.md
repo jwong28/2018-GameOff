@@ -25,3 +25,8 @@
 
 11-11-2018:
 - Updated frames to change based on direction (jwong28)
+
+11-12-2018:
+- Updated bullets to be added into the game. (SimonHe1)
+- Made bullets go in all directions except the left side of player for some reason. Will Fix after. (SimonHe1)
+- Trying to use sin and cos instead of all the directions to see if there's a simpler way to implement angle. (SimonHe1)
