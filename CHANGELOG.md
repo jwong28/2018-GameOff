@@ -25,3 +25,10 @@
 
 11-11-2018:
 - Updated frames to change based on direction (jwong28)
+
+11-12-2018:
+- Integrated Webpack, ES6 with Phaser (jwong28)
+- Babel added in (jwong28)
+- Animations class added (jwong28)
+- Preloader added (jwong28)
+- Player update movements section, magic numbers added (jwong28)
