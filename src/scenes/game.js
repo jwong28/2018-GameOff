@@ -1,5 +1,6 @@
 import phaser from 'phaser'
 import Player from '../sprites/Player';
+import Bullets from '../sprites/Bullet';
 
 export class Game extends phaser.Scene {
     constructor (test) {
@@ -32,7 +33,8 @@ export class Game extends phaser.Scene {
             left: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT),
             right: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT),
             up: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP),
-            down: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN)
+            down: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN),
+            space: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
         }
         this.cursors = this.input.keyboard.createCursorKeys();
 
@@ -40,12 +42,20 @@ export class Game extends phaser.Scene {
         this.physics.add.collider(this.player, platforms);
 
         //add bullets group
-        let bullets = this.physics.add.group();
+        this.bullets = this.add.group({
+            classType: Bullets,
+            maxSize: 20,
+            runChildUpdate: false
+        });
     }
 
     update(delta)
     { 
-       this.player.update(this.keys, delta);
+        this.player.update(this.keys, delta);
+        Array.from(this.bullets.children.entries).forEach(
+            (bullet) => {
+                bullet.update(time,delta);
+            });
     }
 
 }

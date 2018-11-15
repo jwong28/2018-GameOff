@@ -4,20 +4,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
         super(config.scene, config.x, config.y, config.key);
         config.scene.physics.world.enable(this);
         config.scene.add.existing(this);
+        this.body.collideWorldBounds = true;
         this.type = 'player';
         this.direction = '';
         this.speed = 160;
-    }
-
-    create()
-    {
-        //Player animations
-        //Left
-        this.anims.create({
-            key: 'left',
-            frames: [ { key: 'player', frame: 0 } ],
-            frameRate: 20
-        });
     }
 
     update(keys, delta)
