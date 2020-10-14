@@ -27,8 +27,14 @@
 - Updated frames to change based on direction (jwong28)
 
 11-12-2018:
+<<<<<<< HEAD
+- Updated bullets to be added into the game. (SimonHe1)
+- Made bullets go in all directions except the left side of player for some reason. Will Fix after. (SimonHe1)
+- Trying to use sin and cos instead of all the directions to see if there's a simpler way to implement angle. (SimonHe1)
+=======
 - Integrated Webpack, ES6 with Phaser (jwong28)
 - Babel added in (jwong28)
 - Animations class added (jwong28)
 - Preloader added (jwong28)
 - Player update movements section, magic numbers added (jwong28)
+>>>>>>> 5fba7a00cfdc6e342b080eea5980ddc78bc728d2
